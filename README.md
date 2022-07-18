@@ -1,22 +1,17 @@
-# Arch Linux Installation.
+# Arch Linux Installation Guide. 
+
+This document is a personal guide I use when install Arch. I recommend you read the official [arch wiki]((https://wiki.archlinux.org/index.php/installation_guide).
+). The guide is focused on `grub` and `MBR` plus post installation packages and configuration guides.
 
 ## Preinstallation
  
 Before installing, make sure to:
 
-+ Read the [offical wiki](https://wiki.archlinux.org/index.php/installation_guide).
++ Read the [arch wiki](https://wiki.archlinux.org/index.php/installation_guide).
++ Download the installation image from the [arch iso downloads](https://archlinux.org/download/)
 + Verify the installation image signature.
++ Prepare the installation USB drive
 + Boot the live environment.
-
-## Booting with a Master Boot Record(MBR) System.
-
-This document describes in detailed the prefered installation guide I use for Arch Linux on my workstation. 
-
-* __MBR__ Master Boot Record for Legacy Bios.
-
----
-
-Before you begin the installation process you must prepare the installation media and ensure your BIOS is configured correctly. 
 
 ## Preparing the Installation Media
 
