@@ -30,7 +30,7 @@ Ensure your current user has sudo privileges.
 
 On Windows user Rufus. 
 
-![Rufus on Windows](./images/rufus.png]
+![Rufus on Windows](/images/rufus.png]
 
 ---
 
