@@ -21,11 +21,11 @@ Before installing, make sure to:
 sudo dd if=/path_to_arch_.iso of=/dev/sd* status=progress
 ``````
 
-Ensure your current user has sudo privileges. 
+Ensure your current user has sudo privileges.
 
 On Windows user Rufus. 
 
-![Rufus on Windows](./images/rufus.png]
+![rufus](https://user-images.githubusercontent.com/50109792/179557935-2a5b0b53-5c4a-4c0f-bfbb-1a1348d2bca6.png)
 
 ---
 
