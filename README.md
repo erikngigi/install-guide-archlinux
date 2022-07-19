@@ -507,12 +507,18 @@ To enable the network daemons on your next reboot, you need to enable `dhcpcd.se
 
 ## Exit chroot and reboot:  
 
-Exit the chroot environment by typing `exit` or pressing <kbd>Ctrl + d</kbd>. You can also unmount all mounted partition after this. 
+Exit the chroot environment by typing `exit`.
+
+Unmount all partitions with the following command: 
+
+``````
+# umount -R /mnt
+``````
 
 Finally, `reboot`.
 
-##  Finale
+``````
+# reboot
+``````
 
-If your installation is a success, then ***yay!!!*** If not, you should start questioning your own existence. Are your parents proud of you? 
-
-## [[POST INSTALLATION]](./POST.md)		[[EXTRAS]](./EXTRAS.md)
+## [[POST INSTALLATION]](./POST.md)	&	[[EXTRAS]](./EXTRAS.md)
