@@ -1,6 +1,6 @@
-# Arch Linux MBR and UEFI personal guide. 
+# Arch Linux MBR Installation Guide. 
 
-This is my personal guide. I recommend you to read the official [`installation of arch wiki`](https://wiki.archlinux.org/index.php/Installation_guide). This guide will focus on `grub`, `MBR` and `UEFI`. The purpose of this guide is to speed up the install process `Archlinux`.
+This is my personal guide. I recommend you to read the official [`installation of arch wiki`](https://wiki.archlinux.org/index.php/Installation_guide). This guide will focus on `grub` and MBR`. The purpose of this guide is to speed up the install process `Archlinux`.
 
 ## Why Archlinux
 A linux distribution like `Archlinux` give you the freedom to `do it yourself`. 
