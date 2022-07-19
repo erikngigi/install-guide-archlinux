@@ -1,27 +1,27 @@
 # Arch Linux MBR Installation Guide. 
 
-This is my personal guide. I recommend you to read the official [`installation of arch wiki`](https://wiki.archlinux.org/index.php/Installation_guide). This guide will focus on `grub` and `MBR`. The purpose of this guide is to speed up the install process `Archlinux`.
+This is my personal guide. I recommend you to read the official [`installation wiki`](https://wiki.archlinux.org/index.php/Installation_guide). This guide will focus on `grub` and `MBR`. The purpose of this guide is to speed up the install process of `Archlinux`.
 
 ## Why Archlinux
-A linux distribution like `Archlinux` give you the freedom to `do it yourself`. 
+The `Archlinux` distribution gives you the freedom to `do it yourself`. 
 
 __NOTE__ that your kernel and initramfs are on the root file system, recovery after a crash may prove troublesome. 
 
 They are many ways you can layout your partitions, I will focus on:
 
-1. Type of hardware (*BIOS* or *UEFI*)
+1. Type of hardware (*BIOS*)
 
-2. The Brand of the bootloader (*GRUB*)
+2. The bootloader (*GRUB*)
 
-3. I use my laptops for technical work, so the order,the type and the size of partitions matter for my use case.
+3. I use my laptop for technical work, so the order,the type and the size of partitions matter for my use case.
 
 4. I am just a speed enthusiast, like High Performance Computing and why not try to learn by doing it!
 
 The __MAIN__ reason of installing vanilla linux(`Archlinux`) are:
 
   + __No Bloatware__ - Imagine `4GB` image for Windows, `2GB+` for Fedora or Ubuntu but Arch Linux approx. `700MB`. Softwares preinstalled that you will never use. 
-  + __Performance & Security__ - You install other distros; some crapware/spyware you didn't install are working in the background slowing your machine and making you quite uncomfortable.
-  + __Learning__ - you get to understand linux better, nitty gritty.
+  + __Performance & Security__ - Other distributions contain spyware you didn't install and are working in the background slowing your machine and making you quite uncomfortable.
+  + __Learning__ - A better understanding of Linux.
   + __Minimalism__ - Keep It Simple Stupid (KISS)
 
 ## Pre-installation
@@ -33,8 +33,6 @@ Before installing, make sure to:
 + Verify signature.
 + Prepare an installation medium.
 + Boot the live environment.
-
-## Set the keyboard layout
 
 ## Verify the boot mode
 
@@ -127,9 +125,9 @@ In this guide, I'll create a one type of partition for the drive. A normal insta
 
 + Let’s clean up our main drive to create new partitions for our installation. And yeah, in this guide, we will use `/dev/sda` as our disk.
 
-	```
-	# fdisk /dev/sda 
-	```
+```
+# fdisk /dev/sda 
+```
 
 + Press <kbd>d</kbd> to **delete partitions**. **Note if you have several partitions you'll be prompted to delete them**. Then hit <kbd>w</kbd> to write changes to the disk. Note that this will ***format*** your entire drive so your data will be gone. **THIS CANNOT BE UNDONE**.
 
@@ -137,9 +135,9 @@ In this guide, I'll create a one type of partition for the drive. A normal insta
 
 + Open `fdisk` to start partitioning our filesystem
 
-	```
-	# fdisk /dev/sda
-	```
+```
+# fdisk /dev/sda
+```
 
 + Press <kbd>p</kbd> to list all partitions. 
 
@@ -248,7 +246,20 @@ You should see *something like this*:
 	# mount /dev/sda3 /mnt/home
 	```
 
-	We don’t need to mount `swap` since it is already enabled.  
+	We don’t need to mount `swap` since it is already enabled.
+
+---
+
+The final result of `lsblk` should be something like this:
+
+  | NAME | MAJ:MIN | RM | SIZE | RO | TYPE | MOUNTPOINT |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | sda | 8:0 | 0 | 447.1G | 0 | disk  |   |
+  | sda1 | 8:1 | 0 | 8G | 0 | part | swap   |
+  | sda2 | 8:2 | 0 | 150G | 0 | part | /  |
+  | sda3 | 8:3 | 0 | 289G | 0 | part | /home  |
+
+---
 
 ## Installation
 
@@ -520,5 +531,7 @@ Finally, `reboot`.
 ``````
 # reboot
 ``````
-
-## [[POST INSTALLATION]](./POST.md)	&	[[EXTRAS]](./EXTRAS.md)
+---
+### Coming on 20th April 2022. [[POST INSTALLATION]](./POST.md)
+### Coming on 20th April 2022. [[EXTRAS]](./EXTRAS.md)
+### Coming on 21st April 2022. [[WEB DEVELOPMENT]](./WEBDEVELOPMENT.md)
