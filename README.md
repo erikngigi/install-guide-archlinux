@@ -532,6 +532,6 @@ Finally, `reboot`.
 # reboot
 ``````
 ---
-### Coming on 20th April 2022. [[POST INSTALLATION]](./POST.md)
+### Coming on 20th April 2022. [[POST INSTALLATION]](./POST-INSTALL.md)
 ### Coming on 20th April 2022. [[EXTRAS]](./EXTRAS.md)
 ### Coming on 21st April 2022. [[WEB DEVELOPMENT]](./WEBDEVELOPMENT.md)
