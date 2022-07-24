@@ -36,6 +36,15 @@ Before installing, make sure to:
 
 ## Verify the boot mode
 
+## Change Font Settings
+If the terminal font is too small, which can happen if you have a high res display, then execute the following command:
+
+Set the font size to: 
+
+``````
+# setfont lat4a-19 -m 8859-2
+``````
+
 ## Connect to the internet
 
 We need to make sure that we are connected to the internet to be able to install Arch Linux `base` and `linux` packages. Let’s see the names of our interfaces.
