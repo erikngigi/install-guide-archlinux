@@ -132,3 +132,8 @@ Notable changes after installing `gtk3-classic`:
 
 - Hotel
 	+ `trivago`
+
+---
+### Article 1 [[Installation]](./README.md)
+### Article 2 [[Post Installation]](./POST-INSTALL.md)
+### Article 4 [[Web Development Setup]](./WEBDEVELOPMENT.md)

@@ -388,3 +388,8 @@ Create `/etc/fonts/local.conf`, then add:
 ```
 
 Update and set your font of choice on settings.
+
+---
+### Artcile 1 [[Installation]](./README.md)
+### Article 3 [[Extras]](./EXTRAS.md)
+### Article 4 [[Web Development Setup]](./WEBDEVELOPMENT.md)
