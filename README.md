@@ -1,12 +1,12 @@
 <p align="center">
 <span style="font-size:3em;">
-    <img style="height: 51px; width: auto" src="https://github.com/ErikNgigi/Install-Guide-for-Arch-Linux/blob/master/Pictures/ReadMe/Wiki.png?raw=true" />
+    <img style="height: 51px; width: auto" src="https://github.com/ErikNgigi/Install-Guide-for-Arch-Linux/blob/main/Pictures/ReadMe/Wiki.png?raw=true" />
     </a>
 	&nbsp;&nbsp;
-   <img style="height: 50px; width: auto" src="https://github.com/ErikNgigi/Install-Guide-for-Arch-Linux/blob/master/Pictures/ReadMe/Gallery.png?raw=true" />
+   <img style="height: 50px; width: auto" src="https://github.com/ErikNgigi/Install-Guide-for-Arch-Linux/blob/main/Pictures/ReadMe/Gallery.png?raw=true" />
    </a>
 	&nbsp;&nbsp;
-  <img style="height: 50px; width: auto" src="https://github.com/ErikNgigi/Install-Guide-for-Arch-Linux/blob/master/Pictures/ReadMe/Guide.png?raw=true" />
+  <img style="height: 50px; width: auto" src="https://github.com/ErikNgigi/Install-Guide-for-Arch-Linux/blob/main/Pictures/ReadMe/Guide.png?raw=true" />
   </a>
 </span>
 </p>
