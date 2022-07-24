@@ -1,9 +1,16 @@
-![Guide](https://user-images.githubusercontent.com/50109792/180651154-eae47f19-70ce-4e6f-aecd-4b78ced24f96.png)
-
-<p align="center"
-   <img src="https://user-images.githubusercontent.com/50109792/180651154-eae47f19-70ce-4e6f-aecd-4b78ced24f96.png" alt="Guide"/>
+<p align="center">
+<span style="font-size:3em;">
+    <img style="height: 51px; width: auto" src="https://github.com/ErikNgigi/Install-Guide-for-Arch-Linux/blob/master/Pictures/ReadMe/Wiki.png?raw=true" />
+    </a>
+	&nbsp;&nbsp;
+   <img style="height: 50px; width: auto" src="https://github.com/ErikNgigi/Install-Guide-for-Arch-Linux/blob/master/Pictures/ReadMe/Gallery.png?raw=true" />
+   </a>
+	&nbsp;&nbsp;
+  <img style="height: 50px; width: auto" src="https://github.com/ErikNgigi/Install-Guide-for-Arch-Linux/blob/master/Pictures/ReadMe/Guide.png?raw=true" />
+  </a>
+</span>
 </p>
-
+ 
 # Arch Linux MBR Installation Guide.
 
 This is my personal guide. I recommend you to read the official [`installation wiki`](https://wiki.archlinux.org/index.php/Installation_guide). This guide will focus on `grub` and `MBR`. The purpose of this guide is to speed up the install process of `Archlinux`.
