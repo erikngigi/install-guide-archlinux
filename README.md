@@ -34,8 +34,19 @@ Before installing, make sure to:
 + Prepare an installation medium.
 + Boot the live environment.
 
-## Verify the boot mode
+## Create an Installation Medium
+First we need to create an installation medium to boot from:
 
+On Linux:
+
+``````
+# dd if=path_to_arch_iso of=/dev/sd* status=progress
+``````
+   + `progress` see periodic transfer statistics. 
+
+---
+
+# Installation Medium Boot
 ## Change Font Settings
 If the terminal font is too small, which can happen if you have a high res display, then execute the following command:
 
