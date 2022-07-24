@@ -1,4 +1,6 @@
-# Arch Linux MBR Installation Guide. 
+![Guide](https://user-images.githubusercontent.com/50109792/180651154-eae47f19-70ce-4e6f-aecd-4b78ced24f96.png)
+
+# Arch Linux MBR Installation Guide.
 
 This is my personal guide. I recommend you to read the official [`installation wiki`](https://wiki.archlinux.org/index.php/Installation_guide). This guide will focus on `grub` and `MBR`. The purpose of this guide is to speed up the install process of `Archlinux`.
 
