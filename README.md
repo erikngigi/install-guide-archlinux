@@ -305,7 +305,7 @@ You should see *something like this*:
    - `space_cache=v2` Options to control the free space cache. The free space cache greatly improves performance when reading block group free space into memory.
    - `compress=zstd` Control BTRFS file data compression. (zstd) for higher compression ratios.
 
-You can read more about btrfs mount options [here](https://btrfs.wiki.kernel.org/index.php/Manpage/btrfs(5)).
+You can read more about btrfs mount options [here](https://btrfs.readthedocs.io/en/latest/btrfs-man5.html){:target="_blank" rel="noopener"}.
 
 + We don’t need to mount `swap` since it is already enabled.
 
