@@ -13,8 +13,7 @@
  
 # Arch Linux MBR Installation Guide.
 
-This is my personal guide. I recommend that you read the official [wiki](
-). The purpose of this guide is to speed up my personal install of `Archlinux`.
+This is my personal guide. I recommend that you read the official [wiki](https://wiki.archlinux.org/index.php/installation_guide). The purpose of this guide is to speed up my personal install of `Archlinux`.
 
 ## Why Archlinux
 The `Archlinux` distribution gives you the freedom to `do it yourself`. 
