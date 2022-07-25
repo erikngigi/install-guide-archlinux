@@ -13,9 +13,8 @@
  
 # Arch Linux MBR Installation Guide.
 
-This is my personal guide. I recommend that you read the official <a href="https://wiki.archlinux.org/index.php/Installation_guide" target="_blank">wiki</a>. The purpose of this guide is to speed up my personal install of `Archlinux`.
-
-<a href="" target="_blank"></a>
+This is my personal guide. I recommend that you read the official [wiki](
+). The purpose of this guide is to speed up my personal install of `Archlinux`.
 
 ## Why Archlinux
 The `Archlinux` distribution gives you the freedom to `do it yourself`. 
@@ -43,12 +42,12 @@ The __MAIN__ reason of installing vanilla linux(`Archlinux`) are:
 
 Before installing, make sure to:
 
-+ Read the <a href="https://wiki.archlinux.org/index.php/installation_guide" target="_blank">wiki</a> It is advisable to read that instead. I wrote this guide for myself
-+ Acquire an installation image from <a href="https://www.archlinux.org/download" target="_blank">here</a>.
++ Read the [wiki](https://wiki.archlinux.org/index.php/installation_guide). It is advisable to read that instead. I wrote this guide for myself
++ Acquire an installation image from [here](https://www.archlinux.org/download).
 + Verify signature.
 + Prepare an installation medium.
 + Boot the live environment.
-+ Basic understanding of <a href="https://www.openvim.com/" target="_blank">vim</a>
++ Basic understanding of [Vim](https://www.openvim.com/).
 
 ## Create an Installation Medium
 First we need to create an installation medium to boot from:
@@ -356,7 +355,7 @@ Now let’s go ahead and install `base`, `linux`, `linux-firmware`, and `base-de
    - `linux-zen`: For the performance driven users.
    - `linux-hardened`: For the security concerned users.
 
-Users interested in installing other kernels on the system read this <a href="https://itsfoss.com/switch-kernels-arch-linux" target="_blank">post</a>.  
+Users interested in installing other kernels on the system read this [post](https://btrfs.readthedocs.io/en/latest/btrfs-man5.html).  
 
 The `base` package does not include all tools from the live installation, so installing other packages may be necessary for a fully functional base system. In particular, consider installing: 
 
