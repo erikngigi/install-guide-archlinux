@@ -13,7 +13,9 @@
  
 # Arch Linux MBR Installation Guide.
 
-This is my personal guide. I recommend that you read the official [`wiki`](https://wiki.archlinux.org/index.php/Installation_guide). The purpose of this guide is to speed up my personal install of `Archlinux`.
+This is my personal guide. I recommend that you read the official <a href="https://wiki.archlinux.org/index.php/Installation_guide" target="_blank">wiki</a>. The purpose of this guide is to speed up my personal install of `Archlinux`.
+
+<a href="" target="_blank"></a>
 
 ## Why Archlinux
 The `Archlinux` distribution gives you the freedom to `do it yourself`. 
@@ -41,11 +43,12 @@ The __MAIN__ reason of installing vanilla linux(`Archlinux`) are:
 
 Before installing, make sure to:
 
-+ Read the [official wiki](https://wiki.archlinux.org/index.php/installation_guide). It is advisable to read that instead. I wrote this guide for myself.
-+ Acquire an installation image from [here](https://www.archlinux.org/download/).
++ Read the <a href="https://wiki.archlinux.org/index.php/installation_guide" target="_blank">wiki</a> It is advisable to read that instead. I wrote this guide for myself
++ Acquire an installation image from <a href="https://www.archlinux.org/download" target="_blank">here</a>.
 + Verify signature.
 + Prepare an installation medium.
 + Boot the live environment.
++ Basic understanding of <a href="https://www.openvim.com/" target="_blank">vim</a>
 
 ## Create an Installation Medium
 First we need to create an installation medium to boot from:
@@ -71,8 +74,6 @@ Set the font size to:
 ``````
 # setfont lat4a-19 -m 8859-2
 ``````
-
-
 
 ## Connect to the internet
 
@@ -107,6 +108,15 @@ If you are on a wired connection, you can enable your wired interface by systemc
 ### Wireless Connection
 
 If you are on a laptop, you can connect to a wireless access point using `iwctl` command from `iwd`. Note that it's already enabled by default. Also make sure the wireless card is not blocked with `rfkill`.
+
+To show current status: 
+``````
+# rfkill list
+``````
+If the card is hard-blocked, use the hardware button (switch) to unblock it. If the card is not hard-blocked but soft-blocked, use the following command:
+``````
+# rfkill unblock wifi
+``````
 
 Scan for network.
 
@@ -305,7 +315,7 @@ You should see *something like this*:
    - `space_cache=v2` Options to control the free space cache. The free space cache greatly improves performance when reading block group free space into memory.
    - `compress=zstd` Control BTRFS file data compression. (zstd) for higher compression ratios.
 
-You can read more about btrfs mount options [here](https://btrfs.readthedocs.io/en/latest/btrfs-man5.html){:target="_blank" rel="noopener"}.
+You can read more about btrfs mount options <a href="https://btrfs.readthedocs.io/en/latest/btrfs-man5.html" target="_blank">here</a>.
 
 + We don’t need to mount `swap` since it is already enabled.
 
@@ -346,7 +356,7 @@ Now let’s go ahead and install `base`, `linux`, `linux-firmware`, and `base-de
    - `linux-zen`: For the performance driven users.
    - `linux-hardened`: For the security concerned users.
 
-For users interested in installing other kernels on the system [read](https://itsfoss.com/switch-kernels-arch-linux/) this post.  
+Users interested in installing other kernels on the system read this <a href="https://itsfoss.com/switch-kernels-arch-linux" target="_blank">post</a>.  
 
 The `base` package does not include all tools from the live installation, so installing other packages may be necessary for a fully functional base system. In particular, consider installing: 
 
