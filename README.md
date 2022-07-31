@@ -41,7 +41,7 @@ First we need to create an installation medium to boot from:
 On Linux using the `dd` command:
 
 ``````
-# dd if=path_to_arch_iso of=/dev/sd* status=progress
+dd if=path_to_arch_iso of=/dev/sd* status=progress
 ``````
    + `dd` CLI utility for converting and copying files.
    + `if` the input file
@@ -57,7 +57,7 @@ If the terminal font is too small, which can happen if you have a high res displ
 Set the font size to: 
 
 ``````
-# setfont lat4a-19 -m 8859-2
+setfont lat4a-19 -m 8859-2
 ``````
 
 ## Connect to the internet
@@ -65,7 +65,7 @@ Set the font size to:
 We need to make sure that we are connected to the internet to be able to install Arch Linux `base` and `linux` packages. Let’s see the names of our interfaces.
 
 ```
-# ip addr
+ip addr
 ```
 
 You should see something like this:
@@ -87,7 +87,7 @@ You should see something like this:
 If you are on a wired connection, you can enable your wired interface by systemctl start `dhcpcd@<interface>`.  
 
 ```
-# systemctl start dhcpcd@eno1
+systemctl start dhcpcd@eno1
 ```
 
 ### Wireless Connection
@@ -96,35 +96,35 @@ If you are on a laptop, you can connect to a wireless access point using `iwctl`
 
 To show current status: 
 ``````
-# rfkill list
+rfkill list
 ``````
 If the card is hard-blocked, use the hardware button (switch) to unblock it. If the card is not hard-blocked but soft-blocked, use the following command:
 ``````
-# rfkill unblock wifi
+rfkill unblock wifi
 ``````
 
 Scan for network.
 
 ```
-# iwctl station wlo1 scan
+iwctl station wlo1 scan
 ```
 
 Get the list of scanned networks by:
 
 ```
-# iwctl station wlo1 get-networks
+iwctl station wlo1 get-networks
 ```
 
 Connect to your network.
 
 ```
-# iwctl -P "PASSPHRASE" station wlo1 connect "NETWORKNAME"
+iwctl -P "PASSPHRASE" station wlo1 connect "NETWORKNAME"
 ```
 
 Ping the Goggle DNS servers to make sure we are online:
 
 ```
-# ping -c 5 8.8.8.8
+ping -c 5 8.8.8.8
 ``` 
 
 + `-c 5`    number of times to ping.
@@ -137,7 +137,7 @@ If you receive Unknown host or Destination host unreachable response, means you 
 Use `timedatectl` to ensure the system clock is accurate:
 
 ```
-# timedatectl set-ntp true
+timedatectl set-ntp true
 ```
 
 To check the service status, use `timedatectl status`.
@@ -147,7 +147,7 @@ To check the service status, use `timedatectl status`.
 When recognized by the live system, disks are assigned to a block device such as `/dev/sda`, `/dev/nvme0n1` or `/dev/mmcblk0`. To identify these devices, use lsblk or fdisk.  The most common main drive is `sda`.
 
 ```
-# lsblk
+lsblk
 ```
 
 Results ending in `rom`, `loop` or `airoot` may be ignored.
@@ -161,7 +161,7 @@ In this guide, I'll create a one type of partition for the drive. A normal insta
 + Let’s clean up our main drive to create new partitions for our installation. And yeah, in this guide, we will use `/dev/sda` as our disk.
 
 ```
-# fdisk /dev/sda 
+fdisk /dev/sda 
 ```
 
 + Press <kbd>p</kbd> to list all partitions. 
@@ -234,7 +234,7 @@ In this guide, I'll create a one type of partition for the drive. A normal insta
 Use `lsblk` again to check the partitions we created. 
 
 ```
-# lsblk
+lsblk
 ```
 
 You should see *something like this*:
@@ -259,17 +259,17 @@ You should see *something like this*:
 
 + Create and enable our `swap` under the `/dev/sda1` partition.
 
-	```
-	mkswap /dev/sda1
-	swapon /dev/sda1
-	```
+```
+mkswap /dev/sda1
+swapon /dev/sda1
+```
 
 + Format `/dev/sda2` and `/dev/sda3` partition as `BTRFS`. This will be our `root` and `home`  partition.
 
-	```
-	# mkfs.btrfs /dev/sda2
-	# mkfs.btrfs /dev/sda3
-	```
+```
+mkfs.btrfs /dev/sda2
+mkfs.btrfs /dev/sda3
+```
 
 ## Mount the filesystems
 
@@ -277,21 +277,21 @@ You should see *something like this*:
 
 + Mount the `/dev/sda` partition to `/mnt`. This is our `/`:
 
-	```
-	# mount -o noatime,space_cache=v2,compress=zstd /dev/sda2 /mnt
-	```
+```
+mount -o noatime,space_cache=v2,compress=zstd /dev/sda2 /mnt
+```
 
 + Create a `/home` mountpoint:
 
-	```
-	# mkdir /mnt/home  
-	```
+```
+mkdir /mnt/home  
+```
 
 + Mount `/dev/sda3` to `/mnt/home` partition. This is will be our `/home`:
 
-	```
-	# mount -o noatime,space_cache=v2,compress=zstd /dev/sda3 /mnt/home
-	```
+```
+mount -o noatime,space_cache=v2,compress=zstd /dev/sda3 /mnt/home
+```
 
 ###### Btrfs Options:
 
@@ -322,7 +322,7 @@ The final result of `lsblk` should be something like this:
 Now let’s go ahead and install `base`, `linux`, `linux-firmware`, and `base-devel` packages into our system. 
 
 ```
-# pacstrap /mnt base base-devel linux linux-firmware vim btrfs-progs
+pacstrap /mnt base base-devel linux linux-firmware vim btrfs-progs
 ```
 
 + pacstrap will install the packages mentioned above on a newly made root partition:
@@ -387,13 +387,13 @@ These tools will be useful later.
 ## Generating the fstab
 
 ```
-# genfstab -U /mnt >> /mnt/etc/fstab
+genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
 Check the resulting `/mnt/etc/fstab` file, and edit it in case of errors.
 
 ``````
-# cat /mnt/etc/fstab
+cat /mnt/etc/fstab
 ``````
 
 ## Chroot
@@ -401,7 +401,7 @@ Check the resulting `/mnt/etc/fstab` file, and edit it in case of errors.
 Now, change root into the newly installed system  
 
 ```
-# arch-chroot /mnt /bin/bash
+arch-chroot /mnt /bin/bash
 ```
 
 ## Time zone
@@ -411,13 +411,13 @@ A selection of timezones can be found under `/usr/share/zoneinfo/`. Since I am i
 Create a symolic link to `etc/localtime`
 
 ```
-# ln -sf /usr/share/zoneinfo/Africa/Nairobi /etc/localtime
+ln -sf /usr/share/zoneinfo/Africa/Nairobi /etc/localtime
 ```
 
 Run `hwclock` to generate `/etc/adjtime`: 
 
 ```
-# hwclock --systohc
+hwclock --systohc
 ```
 
 This command assumes the hardware clock is set to UTC.
@@ -427,7 +427,7 @@ This command assumes the hardware clock is set to UTC.
 The `locale` defines which language the system uses, and other regional considerations such as currency denomination, numerology, and character sets. Possible values are listed in `/etc/locale.gen`. Uncomment `en_US.UTF-8`, as well as other needed localisations.
 
 ``````
-# vim /etc/locale.gen
+vim /etc/locale.gen
 ``````
 
 **Uncomment** `en_US.UTF-8 UTF-8` in `/etc/locale.gen`, **save** the file, and generate them with:  
@@ -435,24 +435,24 @@ The `locale` defines which language the system uses, and other regional consider
 or use the command to uncomment the line:
 
 ``````
-# sed -i `178s` /etc/locale.gen
+sed -i `178s` /etc/locale.gen
 ``````
 generate the `locale.gen` file:
 
 ```
-# locale-gen
+locale-gen
 ```
 
 Create the `locale.conf` file, and set the LANG variable accordingly:  
 
 ```
-# echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 ```
 
 If you set the keyboard layout earlier, make the changes persistent in `vconsole.conf`:
 
 ```
-# echo "KEYMAP=us" > /etc/vconsole.conf
+echo "KEYMAP=us" > /etc/vconsole.conf
 ```
 
 ## Network configuration
@@ -460,7 +460,7 @@ If you set the keyboard layout earlier, make the changes persistent in `vconsole
 Create the hostname file. In this guide I'll just use `MYHOSTNAME` as hostname. Hostname is the host name of the host. Every 60 seconds, a minute passes in Africa.
 
 ```
-# echo "MYHOSTNAME" > /etc/hostname
+echo "MYHOSTNAME" > /etc/hostname
 ```
 
 Open `/etc/hosts` to add matching entries to `hosts`:
@@ -494,7 +494,7 @@ MODULES=(btrfs)
 Recreate the `mkinitcpio` 
 
 ``````
-# mkinitcpio -p linux
+mkinitcpio -p linux
 ``````
 
 ## Adding Repositories - `multilib` and `AUR`
@@ -538,7 +538,7 @@ ILoveCandy
 To check if you successfully added the repositories and enable the easter-eggs, run:
 
 ```
-# pacman -Syu
+pacman -Syu
 ```
 
 If updating returns an error, open the `pacman.conf` again and check for human errors. Yes, you f'ed up big time.
@@ -548,7 +548,7 @@ If updating returns an error, open the `pacman.conf` again and check for human e
 Installing grub:
 
 ``````
-# grub-install --target=i386-pc /dev/sda 
+grub-install --target=i386-pc /dev/sda 
 ``````
 
 Genertate the configuration file:
@@ -562,7 +562,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 Set the `root` password:  
 
 ```
-# passwd
+passwd
 ```
 Enter your password twice to set the root password. 
 
@@ -571,7 +571,7 @@ Enter your password twice to set the root password.
 Add a new user account. In this guide, I'll just use `MYUSERNAME` as the username of the new user aside from `root` account. Of course, change the example username with your own:  
 
 ```
-# useradd -m -g users -G wheel,storage,power,video,audio,rfkill,input -s /bin/bash MYUSERNAME
+useradd -m -g users -G wheel,storage,power,video,audio,rfkill,input -s /bin/bash MYUSERNAME
 ```
 
 This will create a new user and its `home` folder.
@@ -579,7 +579,7 @@ This will create a new user and its `home` folder.
 Set the password of user `MYUSERNAME`:  
 
 ```
-# passwd MYUSERNAME
+passwd MYUSERNAME
 ```
 
 ## Add the new user to sudoers:
@@ -587,13 +587,13 @@ Set the password of user `MYUSERNAME`:
 If you want a root privilege in the future by using the `sudo` command, you should grant one yourself:
 
 ```
-# EDITOR=vim visudo
+EDITOR=vim visudo
 ```
 
 Uncomment the line (Remove #):
 
 ```
-# %wheel ALL=(ALL) ALL
+%wheel ALL=(ALL) ALL
 ```
 
 ## Enable internet connection for the next boot
@@ -601,7 +601,7 @@ Uncomment the line (Remove #):
 To enable the network daemons on your next reboot, you need to enable `dhcpcd.service` for wired connection and `iwd.service` for a wireless one.
 
 ```
-# systemctl enable dhcpcd iwd
+systemctl enable dhcpcd iwd
 ```
 
 ## Exit chroot and reboot:  
@@ -611,13 +611,13 @@ Exit the chroot environment by typing `exit`.
 Unmount all partitions with the following command: 
 
 ``````
-# umount -R /mnt
+umount -R /mnt
 ``````
 
 Finally, `reboot`.
 
 ``````
-# reboot
+reboot
 ``````
 ---
 ### Article 2 [[Post Installation]](./POST-INSTALL.md)
